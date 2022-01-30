@@ -40,7 +40,6 @@ const calc = function (a, b, action) {
         case "^":
             return +a ^ +b;
         default:
-            console.log("Error");
             break;
     }
 }
