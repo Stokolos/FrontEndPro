@@ -91,7 +91,7 @@ do {
     userNumb = +prompt("Угадайте число от 1 до 10");
     if (userNumb === numbRand) {
         alert("Угадал");
-    } else if (userNumb === null) {
+    } else if (userNumb === 0) {
         alert("Пока!");
     } else if (userNumb < numbRand) {
         alert("Мало, попробуй больше!");
