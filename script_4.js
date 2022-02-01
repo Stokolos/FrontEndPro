@@ -88,17 +88,17 @@ let userNumb;
 let numbRand = Math.ceil(Math.random() * 10);
 
 do {
-    userNumb = prompt("Угадайте число от 1 до 10");
-    if (userNumb == numbRand) {
+    userNumb = +prompt("Угадайте число от 1 до 10");
+    if (userNumb === numbRand) {
         alert("Угадал");
-    } else if (userNumb == null) {
+    } else if (userNumb === null) {
         alert("Пока!");
     } else if (userNumb < numbRand) {
         alert("Мало, попробуй больше!");
     } else if (userNumb > numbRand) {
         alert("Много, попробуй меньше!");
     }
-} while (userNumb != numbRand && userNumb)
+} while (userNumb !== numbRand && userNumb)
 
 // Задание № 12
 let str = "*";
