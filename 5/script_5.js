@@ -24,11 +24,11 @@ function compare(obj1, obj2) {
     if (obj1 === obj2) {
         return true;
     } else {
-        if (Object.keys(obj1).length != Object.keys(obj2).length) {
+        if (Object.keys(obj1).length !== Object.keys(obj2).length) {
             return false;
         }
-        for (const propName in obj1) {
-            if (obj1[propName].valueOf() !== obj2[propName].valueOf()) {
+        for (const prop in obj1) {
+            if (obj1[prop].valueOf() !== obj2[prop].valueOf()) {
 
                 return false;
             }
