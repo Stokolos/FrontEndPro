@@ -19,27 +19,34 @@ console.log(copy(origin))
 
 // // Задание № 2
 
-function myFunc(objectOne, objectTwo) {
-    for (const key1 in objectOne) {
-        objectOne[key1] = objectTwo[key1]
-        return objectOne === objectTwo
+function compare(obj1, obj2) {
+
+    if (obj1 === obj2) {
+        return true;
+    } else {
+        if (Object.keys(obj1).length != Object.keys(obj2).length) {
+            return false;
+        }
+        for (const propName in obj1) {
+            if (obj1[propName].valueOf() !== obj2[propName].valueOf()) {
+
+                return false;
+            }
+        }
     }
-
-
+    return true;
 }
-
-const objectOne = {
+const obj1 = {
+    mail: "zpcity2014@gmail.com",
     firstName: "Pavel",
-    lastName: "Voronov",
-    mail: "zpcity2014@gmail.com"
-};
-
-const objectTwo = {
+    lastName: "Voronov"
+}
+const obj2 = {
+    mail: "zpcity2014@gmail.com",
     firstName: "Pavel",
-    lastName: "Voronov",
-    mail: "zpcity2014@gmail.com"
-};
-console.log(myFunc(objectOne, objectTwo))
+    lastName: "Voronov"
+}
+console.log(compare(obj1, obj2))
 
 // Задание № 3
 
