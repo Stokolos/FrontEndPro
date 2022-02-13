@@ -21,19 +21,17 @@ console.log(copy(origin))
 
 function compare(obj1, obj2) {
 
-    if (obj1 === obj2) {
-        return true;
-    } else {
-        if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+
+    if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+        return false;
+    }
+    for (const prop in obj1) {
+        if (obj1[prop] !== obj2[prop]) {
+
             return false;
         }
-        for (const prop in obj1) {
-            if (obj1[prop].valueOf() !== obj2[prop].valueOf()) {
-
-                return false;
-            }
-        }
     }
+
     return true;
 }
 const obj1 = {
@@ -53,15 +51,15 @@ console.log(compare(obj1, obj2))
 function stringLetter(str) {
     const result = {};
     for (const letter of str) {
-      if (result[letter] === undefined) {
-        result[letter] = 1;
-      } else {
-        const count = result[letter];
-        result[letter] = count + 1;
-      }
+        if (result[letter] === undefined) {
+            result[letter] = 1;
+        } else {
+            const count = result[letter];
+            result[letter] = count + 1;
+        }
     }
     return result;
-  }
-  
-  const result = stringLetter("aaabbc");
-  console.log(result);
+}
+
+const result = stringLetter("aaabbc");
+console.log(result);
