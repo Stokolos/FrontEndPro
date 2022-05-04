@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, blue, yellow) no-repeat;
+    margin: 0;
+}
+
+.boxNumHead {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.boxNum {
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.boxColorHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.styleBoxColor {
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+.boxFocusHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.boxFocus {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 10px;
+
+}
+
+.numChainge {
+    border: none;
+    text-align: center;
+    font-size: 30px;
+    background: transparent;
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    display: inline-block;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+.boxHover:hover {
+    border: 2px solid red;
+}
+
+.btn:hover {
+    border: 2px solid black;
+}
+
+.boxNum,
+.styleBoxColor,
+.boxFocus {
+    border-radius: 15px;
+}
+
+.blue {
+    background: blue;
+}
+
+.green {
+    background: green;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.red {
+    background: red;
+}
+
+.styleBoxColor:hover {
+    color: black;
+    font-size: 25px;
+}
+
+.ulBox {
+    padding: 0;
+    background: transparent;
+}
+
+.boxFocus:hover{
+    border: 2px solid red;
+}
