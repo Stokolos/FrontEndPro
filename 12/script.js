@@ -6,25 +6,23 @@ function boxNumClick() {
     const plus = document.querySelectorAll(".plus")
     const minus = document.querySelectorAll(".minus")
 
-    for(let i = 0; i < boxNum.length; i++){
+    for (let i = 0; i < boxNum.length; i++) {
         const button = boxNum[i];
         const count = numChainge[i];
 
-        button.addEventListener( "click" , event => {
-                        if (event.target=== plus[i]) {
-                            count.value++;
-                        } else if (event.target === minus[i]) {
-                            count.value--;
-                        }
+        button.addEventListener("click", event => {
+            if (event.target === plus[i]) {
+                count.value++;
+            } else if (event.target === minus[i]) {
+                count.value--;
+            }
         });
     }
 }
 
 boxNumClick()
 
-function colorChangeBox(){
-
-}
+// Дано 5 квадратов. Каждый по клику меняет цвет (синий -> зеленый -> желтый)
 
 function changeColorsBoxes() {
 
@@ -46,20 +44,22 @@ function changeColorsBoxes() {
             } else if (box.classList.contains("yellow")) {
                 box.classList.remove("yellow");
                 box.classList.add("blue");
-            } 
+            }
         });
     }
 }
 
 changeColorsBoxes()
 
-function boxFocus() {
-    const list = document.querySelector(".ulBox");
-    const items = document.querySelectorAll(".boxFocus");
+// Сделать список. По клику на любой из элементов он выделяется красным цветом. Если один уже выделен, а кликнули по другому, то выделение с прошлого снимается, и ставится на тот, по которому кликнули.
 
-    for (let b = 0; b < items.length; b++) {
-        let itm = items[b]
-        list.addEventListener("click", event => {
+function boxFocus() {
+    const ulBox = document.querySelector(".ulBox");
+    const boxFocus = document.querySelectorAll(".boxFocus");
+
+    for (let b = 0; b < boxFocus.length; b++) {
+        let itm = boxFocus[b]
+        ulBox.addEventListener("click", event => {
             if (itm.classList.contains("red")) {
                 itm.classList.remove("red");
             }
