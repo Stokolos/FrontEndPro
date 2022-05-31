@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.div{
+    width: 300px;
+}
+
+.divOl {
+    border: 2px solid white;
+    height: 500px;
+    width: 100%;
+
+}
+
+.ol {
+    padding: 0;
+    height: 100%;
+    margin: 0;
+}
+
+.li{
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.wrapperButton {
+    display: flex;
+    justify-content: space-around;
+}
+.mainPage{
+    margin-top: 230px;
+    margin-left: 80px;
+}
