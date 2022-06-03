@@ -75,3 +75,6 @@ button.addEventListener("click", (event) => {
 });
 
 document.body.append(ul);
+
+
+// Проверяем результат
