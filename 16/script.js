@@ -51,6 +51,8 @@ function conectPage(){
 
 const listText = (items) => {
     const olElement = document.querySelector(".olElement")
+    const spanCount = document.querySelector(".numberPage")
+    olElement.setAttribute("start", (Number(spanCount.textContent) * 20 - 19))
     for(let item of items) {
         const li = document.createElement("li");
         li.classList.add("list");

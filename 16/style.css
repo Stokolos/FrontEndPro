@@ -1,0 +1,15 @@
+body {
+    height: 90vh;
+    width: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.olElement {
+    height: 500px;
+    width: 300px;
+    border: 2px solid black;
+    line-height: 25px;
+}
