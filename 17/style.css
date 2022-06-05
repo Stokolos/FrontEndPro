@@ -1,0 +1,13 @@
+body{
+    height: 97vh;
+    width: 210vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    color: black;
+    font-weight: bold;
+    font-size: 20vh;
+}
