@@ -2,14 +2,6 @@ const elements = () => {
     const wrapperClock = document.createElement("div");
     wrapperClock.classList.add("clock");
 
-    // const arr = ["numerHoursFirst", "numerHoursSecond", "colonFirst", "numerMinutesFirst", "numerMinutesSecond", "colonSecond", "numerSecondsFirst", "numerSecondsSecond"];
-    // for (let i = 0; i < arr.length; i++) {
-    //     const wrapperNum = document.createElement("div")
-    //     wrapperNum.classList.add("div")
-    //     wrapperNum.id = arr[i]
-    //     wrapperClock.append(wrapperNum)
-    // }
-
     return wrapperClock
 }
 
