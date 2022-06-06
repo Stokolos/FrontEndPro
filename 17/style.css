@@ -10,4 +10,40 @@ body{
     color: black;
     font-weight: bold;
     font-size: 20vh;
+    height: 95vh;
+    width: 200vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.numerHoursFirst{
+    color: yellow;
+}
+
+.numerHoursSecond{
+    color: red;
+}
+
+.colonFirst{
+    color: green;
+}
+
+.numerMinutesFirst{
+    color: blue;
+}
+
+.numerMinutesSecond{
+    color: blueviolet;
+}
+
+.colonSecond{
+    color: orange;
+}
+
+.numerSecondsFirst{
+    color: chartreuse;
+}
+
+.numerSecondsSecond{
+    color: hotpink;
 }

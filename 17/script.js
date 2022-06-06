@@ -1,26 +1,51 @@
 const elements = () => {
     const wrapperClock = document.createElement("div");
     wrapperClock.classList.add("clock");
-    
+
+    // const arr = ["numerHoursFirst", "numerHoursSecond", "colonFirst", "numerMinutesFirst", "numerMinutesSecond", "colonSecond", "numerSecondsFirst", "numerSecondsSecond"];
+    // for (let i = 0; i < arr.length; i++) {
+    //     const wrapperNum = document.createElement("div")
+    //     wrapperNum.classList.add("div")
+    //     wrapperNum.id = arr[i]
+    //     wrapperClock.append(wrapperNum)
+    // }
+
     return wrapperClock
 }
 
-setInterval(()=> {
-    const date = new Date()
-    const time = document.querySelector(".clock")
+const timer = setInterval(() => {
+    const clock = document.querySelector(".clock")
+    clock.textContent = ""
+    tm(times())
+    console.log(times())
+}, 1000)
 
-    let hours = date.getHours();
-    let minutes = addZero(date.getMinutes());
-    let second = addZero(date.getSeconds());
 
-    let clock = `${hours} : ${minutes} : ${second}`
+function times() {
+    let date = new Date()
+    
+    let hours = date.getHours().toString().padStart(2, "0");
+    let minutes = date.getMinutes().toString().padStart(2, "0");
+    let seconds = date.getSeconds().toString().padStart(2, "0");
 
-    time.innerHTML = clock
-})
+    return `${hours}:${minutes}:${seconds}`
 
-const addZero = (d) => {
-    const time = (d < 10) ? "0" + d : d
-    return time
 }
 
+
+const tm = (item) => {  
+    const arr = ["numerHoursFirst", "numerHoursSecond", "colonFirst", "numerMinutesFirst", "numerMinutesSecond", "colonSecond", "numerSecondsFirst", "numerSecondsSecond"];
+    
+    for (const key of item) {
+        const da = document.querySelector(".clock")
+        const d = document.createElement("div")
+        d.classList.add(arr[item.indexOf(key)])
+        d.textContent = key
+        da.append(d)
+    }
+}
+
+
+
 document.body.append(elements())
+tm(times())
