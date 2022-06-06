@@ -1,0 +1,49 @@
+body{
+    height: 97vh;
+    width: 210vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    color: black;
+    font-weight: bold;
+    font-size: 20vh;
+    height: 95vh;
+    width: 200vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.numerHoursFirst{
+    color: yellow;
+}
+
+.numerHoursSecond{
+    color: red;
+}
+
+.colonFirst{
+    color: green;
+}
+
+.numerMinutesFirst{
+    color: blue;
+}
+
+.numerMinutesSecond{
+    color: blueviolet;
+}
+
+.colonSecond{
+    color: orange;
+}
+
+.numerSecondsFirst{
+    color: chartreuse;
+}
+
+.numerSecondsSecond{
+    color: hotpink;
+}
