@@ -5,37 +5,39 @@ const elements = () => {
     return wrapperClock
 }
 
-const timer = setInterval(() => {
-    const clock = document.querySelector(".clock")
-    clock.textContent = ""
-    tm(times())
-    console.log(times())
-}, 1000)
+setInterval(() => {
+    renderClock(createTimeObj())
+}, 1000);
 
+const createTimeObj = (date = new Date) => {
+    const hours = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    const seconds = date.getSeconds().toString().padStart(2, "0");
 
-const times = () => {
-    let date = new Date()
-    
-    let hours = date.getHours().toString().padStart(2, "0");
-    let minutes = date.getMinutes().toString().padStart(2, "0");
-    let seconds = date.getSeconds().toString().padStart(2, "0");
-
-    return `${hours}:${minutes}:${seconds}`
-
+    return `${hours} : ${minutes} : ${seconds}`;
 }
 
-const tm = (item) => {  
-    const arr = ["numerHoursFirst", "numerHoursSecond", "colonFirst", "numerMinutesFirst", "numerMinutesSecond", "colonSecond", "numerSecondsFirst", "numerSecondsSecond"];
-    
-    for (const key of item) {
-        const da = document.querySelector(".clock")
-        const d = document.createElement("div")
-        const a = item.indexOf(key)
-        d.classList.add(arr[item.indexOf(key)])
-        d.textContent = key
-        da.append(d)
-    }
+const renderClock = (dateString) => {
+    const wrapperClock = document.querySelector(".clock")
+    wrapperClock.textContent = ""
+
+    const [ hours, colon ,minutes, colonSecond ,seconds ] = dateString.split(" ");
+
+    const arr = [[hours,"hour"],[colon, "colon"],[minutes, "min"],[colonSecond,"colon"],[seconds, "sec"]].map(item => {
+        const el = createElement("div", item[1]);
+        el.textContent = item[0];
+
+        return el;
+    })
+
+    arr.forEach(item => wrapperClock.appendChild(item));
+} 
+
+const createElement = (type, selector) => {
+    const elements =  document.createElement(type);
+    elements.classList.add(selector);
+    return elements;
 }
 
 document.body.append(elements())
-tm(times())
+renderClock(createTimeObj())
