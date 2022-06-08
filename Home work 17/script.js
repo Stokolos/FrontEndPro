@@ -1,47 +1,59 @@
 const elements = () => {
     const wrapperClock = document.createElement("div");
     wrapperClock.classList.add("clock");
-
+  
     return wrapperClock
-}
-
-setInterval(() => {
-    renderClock(createTimeObj())
-}, 1000);
-
-const createTimeObj = (date = new Date) => {
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-
-    return `${hours} : ${minutes} : ${seconds}`;
-}
-
-const renderClock = (dateString) => {
+  }
+  
+  setInterval(() => {
+    renderClock(JSClock())
+  }, 10000);
+  
+  // const createTimeObj = (date = new Date) => {
+  //     const hours = date.getHours();
+  //     const minutes = date.getMinutes();
+  //     const seconds = date.getSeconds();
+  
+  //     return `${hours} : ${minutes} : ${seconds}`;
+  // }
+  
+  function JSClock() {
+    let time = new Date();
+    let hour = time.getHours();
+    let minute = time.getMinutes();
+    let second = time.getSeconds();
+    let day_night = "AM"
+    if (hour > 12) {
+        day_night = "PM";
+        hour = hour - 12
+    }
+    return `${hour} : ${minute} : ${second} ${day_night}`;
+  }
+  
+  
+  const renderClock = (item) => {
     const wrapperClock = document.querySelector(".clock")
     wrapperClock.textContent = ""
-
-    const [ hours, colon ,minutes, colonSecond ,seconds ] = dateString.split(" ");
-
-    const arr = [[hours,"hour"],[colon, "colon"],[minutes, "min"],[colonSecond,"colon"],[seconds, "sec"]].map(item => {
-        const el = createElement("div", item[1]);
-        el.textContent = item[0] === "" ? ":" : checkForZero(item[0])
-
-        return el;
-    })
-
-    arr.forEach(item => wrapperClock.appendChild(item));
-} 
-
-const checkForZero = (i) => {
+    for (const key of item) {
+        const el = createElement("div")
+        for(i = 0; i < el.length; i++) {
+          el.classList.add("item-" + i)
+        };
+        el.textContent = key
+        wrapperClock.append(el)
+        
+    }
+  }
+  
+  const checkForZero = (i) => {
     return i < 10 ? "0" + i : i
-}
-
-const createElement = (type, selector) => {
-    const elements =  document.createElement(type);
-    elements.classList.add(selector);
+  }
+  
+  const createElement = (type) => {
+    
+    const elements = document.createElement(type);
     return elements;
-}
-
-document.body.append(elements())
-renderClock(createTimeObj())
+  }
+  
+  document.body.append(elements())
+  renderClock(JSClock())
