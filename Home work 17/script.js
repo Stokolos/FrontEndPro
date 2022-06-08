@@ -36,9 +36,6 @@ const elements = () => {
     wrapperClock.textContent = ""
     for (const key of item) {
         const el = createElement("div")
-        for(i = 0; i < el.length; i++) {
-          el.classList.add("item-" + i)
-        };
         el.textContent = key
         wrapperClock.append(el)
         
@@ -52,6 +49,9 @@ const elements = () => {
   const createElement = (type) => {
     
     const elements = document.createElement(type);
+    for(i = 0; i < el.length; i++) {
+      el.classList.add("item-" + i)
+    };
     return elements;
   }
   
