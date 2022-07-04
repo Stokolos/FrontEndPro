@@ -6,16 +6,7 @@ import PlayerPreview from "./PlayerPreview";
 const Battle = (props) => {
     const [playerOne, setPlayerOne] = useState({ playerOneName: '', playerOneImage: null })
     const [playerTwo, setPlayerTwo] = useState({ playerTwoName: '', playerTwoImage: null })
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         playerOneName: "",
-    //         playerTwoName: "",
-    //         playerOneImage: null,
-    //         playerTwoImage: null
-    //     }
-    // }
-
+  
     const handleSubmitOne = (id, username) => {
         setPlayerOne({
             [id + "Name"]: username,
