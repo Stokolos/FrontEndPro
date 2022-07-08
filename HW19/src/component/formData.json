@@ -1,0 +1,28 @@
+[
+    {
+        "type": "text",
+        "placeholder": "Endter text"
+    },
+    {
+        "type": "number",
+        "minValue": 0,
+        "maxValue": 470
+    },
+    {
+        "type": "select",
+        "options": [
+            {
+                "value": 1,
+                "displayName": "One2"
+            },
+            {
+                "value": 2,
+                "displayName": "Two"
+            },
+            {
+                "value": 3,
+                "displayName": "Three"
+            }
+        ]
+    }
+] 
